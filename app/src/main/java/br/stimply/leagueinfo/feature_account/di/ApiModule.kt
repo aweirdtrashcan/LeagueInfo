@@ -18,7 +18,7 @@ object ApiModule {
     @Singleton
     fun provideAccountApi(): AccountAPI {
         return Retrofit.Builder()
-            .baseUrl(AccountRegion.Americas.url)
+            .baseUrl("https://americas.api.riotgames.com/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
             .create(AccountAPI::class.java)
