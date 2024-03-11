@@ -2,7 +2,6 @@ package br.stimply.leagueinfo.feature_account.data.remote
 
 import br.stimply.leagueinfo.feature_account.data.model.AccountDto
 import br.stimply.leagueinfo.feature_account.data.native.Native
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Path

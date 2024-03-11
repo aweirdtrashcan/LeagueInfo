@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/account_navigation"
+    app:startDestination="@id/fragmentAccount">
+
+    <fragment
+        android:id="@+id/fragmentAccount"
+        android:name="br.stimply.leagueinfo.feature_account.presentation.FragmentAccount"
+        android:label="FragmentAccount" />
+</navigation>

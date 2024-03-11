@@ -1,0 +1,11 @@
+package br.stimply.leagueinfo.feature_profile.di
+
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
+
+@Module
+@InstallIn(ViewModelComponent::class)
+object ProfileModule {
+    
+}

@@ -1,4 +1,4 @@
-package br.stimply.leagueinfo.util
+package br.stimply.leagueinfo.core.data
 
 sealed class Resource<T>(val data: T? = null, val message: String? = null) {
     class Success<T>(data: T, message: String? = null): Resource<T>(data, message)
