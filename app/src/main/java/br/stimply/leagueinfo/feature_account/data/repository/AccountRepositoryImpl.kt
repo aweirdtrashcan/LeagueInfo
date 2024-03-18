@@ -1,19 +1,19 @@
 package br.stimply.leagueinfo.feature_account.data.repository
 
-import android.content.res.Resources
 import br.stimply.leagueinfo.R
 import br.stimply.leagueinfo.feature_account.data.mapper.toAccount
-import br.stimply.leagueinfo.feature_account.data.native.Native
+import br.stimply.leagueinfo.core.native.Native
 import br.stimply.leagueinfo.feature_account.data.remote.AccountAPI
 import br.stimply.leagueinfo.feature_account.domain.model.Account
 import br.stimply.leagueinfo.feature_account.domain.repository.AccountRepository
-import br.stimply.leagueinfo.core.data.Resource
+import br.stimply.leagueinfo.core.domain.Resource
 import br.stimply.leagueinfo.core.data.StringRes
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
+import timber.log.Timber
 import java.io.IOException
 import javax.inject.Inject
 
@@ -31,7 +31,7 @@ class AccountRepositoryImpl @Inject constructor(
                     emit(Resource.Error(errorMessage))
                     return@flow
                 }
-                println("repository called: $gameName $tagLine")
+                Timber.d("repository called: $gameName $tagLine")
                 try {
                     val remoteAccount = accountAPI.getAccount(gameName, tagLine)
                     emit(Resource.Success(remoteAccount.toAccount()))

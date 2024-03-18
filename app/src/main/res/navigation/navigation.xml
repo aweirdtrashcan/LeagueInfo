@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/fragmentAccount"
-        android:name="br.stimply.leagueinfo.feature_account.presentation.FragmentAccount"
+        android:name="br.stimply.leagueinfo.feature_account.presentation.AccountFragment"
         android:label="FragmentAccount" />
 </navigation>

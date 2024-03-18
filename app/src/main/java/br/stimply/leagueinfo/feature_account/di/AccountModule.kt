@@ -9,10 +9,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
-import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
-import javax.inject.Singleton
+import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
 @InstallIn(ViewModelComponent::class)
@@ -29,7 +27,7 @@ object AccountModule {
     fun provideAccountApi(): AccountAPI {
         return Retrofit.Builder()
             .baseUrl("https://americas.api.riotgames.com/")
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(AccountAPI::class.java)
     }

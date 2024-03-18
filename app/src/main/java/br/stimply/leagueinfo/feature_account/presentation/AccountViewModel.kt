@@ -3,11 +3,12 @@ package br.stimply.leagueinfo.feature_account.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.stimply.leagueinfo.feature_account.domain.use_cases.GetAccountUseCase
-import br.stimply.leagueinfo.core.data.Resource
+import br.stimply.leagueinfo.core.domain.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -42,11 +43,9 @@ class AccountViewModel @Inject constructor(
                         _state.value = _state.value.copy(
                             account = it.data
                         )
-                        println(it.data)
                     }
                     is Resource.Error -> {
                         _state.value.errorList.add(it.message!!)
-                        println("Error: ${it.message}")
                     }
                     is Resource.Loading -> {
                         _state.value = _state.value.copy(
@@ -57,5 +56,4 @@ class AccountViewModel @Inject constructor(
             }
         }
     }
-
 }

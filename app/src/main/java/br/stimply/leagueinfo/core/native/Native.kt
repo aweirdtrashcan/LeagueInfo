@@ -1,4 +1,4 @@
-package br.stimply.leagueinfo.feature_account.data.native
+package br.stimply.leagueinfo.core.native
 
 object Native {
 
@@ -11,5 +11,5 @@ object Native {
         }
     }
 
-    external fun getAccountApiKey(): String
+    external fun getRiotApiKey(): String
 }

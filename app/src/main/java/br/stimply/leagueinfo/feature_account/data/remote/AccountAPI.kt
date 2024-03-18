@@ -1,7 +1,7 @@
 package br.stimply.leagueinfo.feature_account.data.remote
 
 import br.stimply.leagueinfo.feature_account.data.model.AccountDto
-import br.stimply.leagueinfo.feature_account.data.native.Native
+import br.stimply.leagueinfo.core.native.Native
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Path
@@ -11,6 +11,6 @@ interface AccountAPI {
     suspend fun getAccount(
         @Path("gameName") gameName: String,
         @Path("tagLine") tag: String,
-        @Header("X-Riot-Token") apiKey: String = Native.getAccountApiKey()
+        @Header("X-Riot-Token") apiKey: String = Native.getRiotApiKey()
     ): AccountDto
 }

@@ -65,7 +65,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.retrofit)
-    implementation(libs.converter.moshi)
+    implementation(libs.converter.gson)
+    implementation(libs.gson)
 
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
@@ -78,4 +79,8 @@ dependencies {
     ksp(libs.androidx.lifecycle.compiler)
 
     implementation(libs.kotlinx.coroutines.android)
+
+    implementation(libs.glide)
+
+    implementation(libs.timber)
 }
